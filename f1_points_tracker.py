@@ -122,10 +122,10 @@ class F1App(tk.Tk):
         inner = tk.Frame(h, bg=F1_CARBON)
         inner.pack(side="left", fill="both", expand=True, padx=18, pady=10)
         tk.Label(inner, text="F1  CHAMPIONSHIP  TRACKER",
-                 font=("Courier New", 17, "bold"),
+                 font=("JetBrains Mono", 17, "bold"),
                  bg=F1_CARBON, fg=F1_WHITE).pack(side="left")
         tk.Label(inner, text="⚡  FASTEST LAP INCLUDED",
-                 font=("Courier New", 9),
+                 font=("JetBrains Mono", 9),
                  bg=F1_CARBON, fg="#FFD700").pack(side="right", padx=6)
 
     # ── Championship standings table (top section) ───────────────────────────
@@ -137,7 +137,7 @@ class F1App(tk.Tk):
         title_row = tk.Frame(outer, bg=F1_PANEL)
         title_row.pack(fill="x", padx=20, pady=(10, 4))
         tk.Label(title_row, text="DRIVERS  CHAMPIONSHIP",
-                 font=("Courier New", 9, "bold"),
+                 font=("JetBrains Mono", 9, "bold"),
                  bg=F1_PANEL, fg=F1_SILVER).pack(side="left")
 
         self.champ_frame = tk.Frame(outer, bg=F1_PANEL)
@@ -162,28 +162,28 @@ class F1App(tk.Tk):
         badge.pack(side="left", fill="y")
         badge.pack_propagate(False)
         tk.Label(badge, text=f"P{rank+1}",
-                 font=("Courier New", 13, "bold"),
+                 font=("JetBrains Mono", 13, "bold"),
                  bg=color, fg=F1_WHITE).pack(expand=True)
 
         # Medal + name
         info = tk.Frame(frame, bg=bg, padx=14)
         info.pack(side="left", fill="y", pady=6)
         tk.Label(info, text=f"{medals[rank]}  {name}",
-                 font=("Courier New", 13, "bold"),
+                 font=("JetBrains Mono", 13, "bold"),
                  bg=bg, fg=color).pack(anchor="w")
         tk.Label(info, text=f"{races} races",
-                 font=("Courier New", 8),
+                 font=("JetBrains Mono", 8),
                  bg=bg, fg=F1_SILVER).pack(anchor="w")
 
         # Points — right side
         pts_frame = tk.Frame(frame, bg=bg)
         pts_frame.pack(side="right", padx=20, pady=6)
         pts_lbl = tk.Label(pts_frame, text=f"{pts}",
-                           font=("Courier New", 26, "bold"),
+                           font=("JetBrains Mono", 26, "bold"),
                            bg=bg, fg=F1_WHITE)
         pts_lbl.pack(anchor="e")
         tk.Label(pts_frame, text="PTS",
-                 font=("Courier New", 7, "bold"),
+                 font=("JetBrains Mono", 7, "bold"),
                  bg=bg, fg=F1_SILVER).pack(anchor="e")
 
         return frame
@@ -197,7 +197,7 @@ class F1App(tk.Tk):
         row.pack(fill="x", padx=20, pady=12)
 
         tk.Label(row, text="LOG RACE  —  ENTER FINISHING POSITIONS",
-                 font=("Courier New", 9, "bold"),
+                 font=("JetBrains Mono", 9, "bold"),
                  bg=F1_CARBON, fg=F1_SILVER).pack(anchor="w")
 
         fields_row = tk.Frame(panel, bg=F1_CARBON)
@@ -213,7 +213,7 @@ class F1App(tk.Tk):
             col.pack(side="left", padx=(0, 24))
 
             tk.Label(col, text=name.upper(),
-                     font=("Courier New", 9, "bold"),
+                     font=("JetBrains Mono", 9, "bold"),
                      bg=F1_CARBON, fg=DRIVER_COLORS[i]).pack(anchor="w")
 
             erow = tk.Frame(col, bg=F1_CARBON)
@@ -223,7 +223,7 @@ class F1App(tk.Tk):
             self.pos_vars.append(var)
 
             e = tk.Entry(erow, textvariable=var,
-                         font=("Courier New", 15, "bold"),
+                         font=("JetBrains Mono", 15, "bold"),
                          width=4, justify="center",
                          bg=F1_BORDER, fg=F1_WHITE,
                          insertbackground=DRIVER_COLORS[i],
@@ -233,7 +233,7 @@ class F1App(tk.Tk):
             e.bind("<Return>", lambda ev: self._submit())
 
             prev = tk.Label(erow, text="  —",
-                            font=("Courier New", 10, "bold"),
+                            font=("JetBrains Mono", 10, "bold"),
                             bg=F1_CARBON, fg=F1_SILVER)
             prev.pack(side="left", padx=(6, 0))
             self.preview_lbls.append(prev)
@@ -242,7 +242,7 @@ class F1App(tk.Tk):
             # Fastest lap radio
             tk.Radiobutton(col, text="⚡ Fastest Lap",
                            variable=self.fl_var, value=i,
-                           font=("Courier New", 8),
+                           font=("JetBrains Mono", 8),
                            bg=F1_CARBON, fg=F1_GOLD,
                            selectcolor=F1_BORDER,
                            activebackground=F1_CARBON,
@@ -253,14 +253,14 @@ class F1App(tk.Tk):
         btn_col.pack(side="left", anchor="s", padx=(8, 0), pady=(0, 4))
 
         tk.Button(btn_col, text="▶  LOG RACE",
-                  font=("Courier New", 10, "bold"),
+                  font=("JetBrains Mono", 10, "bold"),
                   bg=F1_RED, fg=F1_WHITE,
                   activebackground="#C0001F", activeforeground=F1_WHITE,
                   relief="flat", bd=0, padx=16, pady=8,
                   cursor="hand2", command=self._submit).pack(side="left")
 
         tk.Button(btn_col, text="✕  DELETE SELECTED",
-                  font=("Courier New", 10, "bold"),
+                  font=("JetBrains Mono", 10, "bold"),
                   bg=F1_BORDER, fg=F1_SILVER,
                   activebackground="#3A3A3A", activeforeground=F1_WHITE,
                   relief="flat", bd=0, padx=12, pady=8,
@@ -274,7 +274,7 @@ class F1App(tk.Tk):
         outer.pack(fill="both", expand=True, padx=20, pady=12)
 
         tk.Label(outer, text="RACE  LOG",
-                 font=("Courier New", 8, "bold"),
+                 font=("JetBrains Mono", 8, "bold"),
                  bg=F1_DARK, fg=F1_SILVER).pack(anchor="w", pady=(0, 4))
 
         style = ttk.Style(self)
@@ -282,10 +282,10 @@ class F1App(tk.Tk):
         style.configure("F1.Treeview",
             background=F1_PANEL, foreground=F1_WHITE,
             fieldbackground=F1_PANEL, rowheight=28,
-            font=("Courier New", 10), borderwidth=0)
+            font=("JetBrains Mono", 10), borderwidth=0)
         style.configure("F1.Treeview.Heading",
             background=F1_CARBON, foreground=F1_RED,
-            font=("Courier New", 8, "bold"), relief="flat")
+            font=("JetBrains Mono", 8, "bold"), relief="flat")
         style.map("F1.Treeview",
             background=[("selected", "#3A0010")],
             foreground=[("selected", F1_WHITE)])
@@ -423,14 +423,14 @@ class F1App(tk.Tk):
             badge.pack(side="left", fill="y")
             badge.pack_propagate(False)
             tk.Label(badge, text=f"P{rank+1}",
-                     font=("Courier New", 13, "bold"),
+                     font=("JetBrains Mono", 13, "bold"),
                      bg=color, fg=F1_WHITE).pack(expand=True)
 
             # Name + races
             info = tk.Frame(frame, bg=bg, padx=14)
             info.pack(side="left", fill="y", pady=5)
             tk.Label(info, text=f"{medals[rank]}  {name}",
-                     font=("Courier New", 13, "bold"),
+                     font=("JetBrains Mono", 13, "bold"),
                      bg=bg, fg=color).pack(anchor="w")
 
             gap_text = f"{race_count} races"
@@ -438,17 +438,17 @@ class F1App(tk.Tk):
                 leader_pts = totals[ranked[0]]
                 gap_text += f"   Δ -{leader_pts - pts} pts to leader"
             tk.Label(info, text=gap_text,
-                     font=("Courier New", 8),
+                     font=("JetBrains Mono", 8),
                      bg=bg, fg=F1_SILVER).pack(anchor="w")
 
             # Points
             pts_frame = tk.Frame(frame, bg=bg)
             pts_frame.pack(side="right", padx=22, pady=5)
             tk.Label(pts_frame, text=str(pts),
-                     font=("Courier New", 26, "bold"),
+                     font=("JetBrains Mono", 26, "bold"),
                      bg=bg, fg=F1_WHITE).pack(anchor="e")
             tk.Label(pts_frame, text="PTS",
-                     font=("Courier New", 7, "bold"),
+                     font=("JetBrains Mono", 7, "bold"),
                      bg=bg, fg=F1_SILVER).pack(anchor="e")
 
             self.champ_rows.append(frame)
